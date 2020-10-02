@@ -65,3 +65,12 @@ if customer6_expected != customer6_paid:
 # calculate expected cost
 # if the price paid is not equal to the expected cost, print statement
 # close file
+
+def correct_payments(file):
+    orders = open(file)
+    for line in orders:
+        line = line.rstrip() #remove tailing white space
+        words = line.split('|')
+    return words
+
+print(correct_payments("customer-orders.txt"))
