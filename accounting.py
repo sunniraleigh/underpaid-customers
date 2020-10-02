@@ -68,9 +68,22 @@ if customer6_expected != customer6_paid:
 
 def correct_payments(file):
     orders = open(file)
+    melon_cost = 1.00
     for line in orders:
         line = line.rstrip() #remove tailing white space
         words = line.split('|')
-    return words
 
-print(correct_payments("customer-orders.txt"))
+        customer_name = words[1]
+        customer_melons = words[2]
+        customer_paid = words[3]
+
+        expected_cost = melon_cost * float(customer_melons)
+
+        if expected_cost != customer_paid:
+            statement = (f"{customer_name} paid ${customer_paid:.2f},", 
+            f"expected ${expected_cost:.2f}")
+
+            return statement
+
+
+correct_payments("customer-orders.txt")
