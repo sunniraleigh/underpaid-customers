@@ -59,3 +59,9 @@ if customer6_expected != customer6_paid:
     print(f"{customer6_name} paid ${customer6_paid:.2f},",
           f"expected ${customer6_expected:.2f}"
           )
+
+# read file
+# parse to get customer name, # of melons and price paid
+# calculate expected cost
+# if the price paid is not equal to the expected cost, print statement
+# close file
